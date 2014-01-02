@@ -9,51 +9,51 @@
 <body>
 
     <h1> <span> Heart Disease Prediction Using Machine Learning </span></h1>
-    <form action="/predict" id="predictform" method="post">
+    <form action="/predict" id="predictform" method="POST">
         <!-- Age -->
         <p name="enter" id="enter"> Enter Your details below : </h4> </p>  
 
-        Age : <input type="number" name="age" id ="age" required> <br>
+        Age : <input type="number" name="age" id ="age" required value="{{form_data.get('age')}}"> <br>
 
         <!-- Sex -->
         <br>
         <label for="sex"> Sex : </label>
         <select name="sex" id="sex" required >
             <option value="" disabled selected > Select </option>
-            <option value="1"> Male </option>
-            <option value="0"> Female </option>
+            <option value="1" {% if form_data.get('sex') == '1' %} selected {% endif %}> Male </option>
+            <option value="0" {% if form_data.get('sex') == '0' %} selected {% endif %}> Female </option>
         </select>
         <br>
 
         <!-- Resting Blood Pressure -->
-        <br> Resting BP : <input type="number" name="bp" id ="bp" required> <br>
+        <br> Resting BP : <input type="number" name="bp" id ="bp" required value="{{form_data.get('bp')}}"> <br>
 
         <!-- Cholesterol -->
-        <br> Cholesterol : <input type="number" name="chl" id ="chl" required> <br>
+        <br> Cholesterol : <input type="number" name="chl" id ="chl" required value="{{form_data.get('chl')}}"> <br>
 
         <!-- Fasting Blood Suger -->
         <br>
         <label for="fbs"> Fasting BS : </label>
         <select name="fbs" id = "fbs" required >
             <option value="" disabled selected > Select </option>
-            <option value="0"> <= 120 mg/dl </option>
-            <option value="1"> >120 mg/dl </option>
+            <option value="0" {% if form_data.get('fbs') == '0' %} selected {% endif %}> <= 120 mg/dl </option>
+            <option value="1" {% if form_data.get('fbs') == '1' %} selected {% endif %} >120 mg/dl </option>
         </select>
         <br>
 
         <!-- Max Heart Rate -->
-        <br> Max HR : <input type="number" name="hr" id ="hr" required> <br>
+        <br> Max HR : <input type="number" name="hr" id ="hr" required value="{{form_data.get('hr')}}"> <br>
 
         <!-- Oldpeak -->
-        <br> Oldpeak : <input type="number" step="0.1" name="op" id ="op" required> <br>
+        <br> Oldpeak : <input type="number" step="0.1" name="op" id ="op" required value="{{form_data.get('op')}}"> <br>
 
         <!-- Exercise Angina -->
         <br>
         <label for="exang"> Exercise Angina : </label>
         <select name="exang" id="exang" required >
             <option value="" disabled selected > Select </option>
-            <option value="1"> Yes </option>
-            <option value="0"> No </option>
+            <option value="1" {% if form_data.get('exang') == '1' %} selected {% endif %}> Yes </option>
+            <option value="0" {% if form_data.get('exang') == '0' %} selected {% endif %}> No </option>
         </select>
         <br>
 
@@ -62,10 +62,10 @@
         <label for="cp"> Chest Pain Type : </label>
         <select name="cp" id="cp" required >
             <option value="" disabled selected > Select </option>
-            <option value="0"> Asymptomatic </option>
-            <option value="1"> Atypical Angina </option>
-            <option value="2"> Non-anginal Angina </option>
-            <option value="3"> Typical Angina </option>
+            <option value="0" {% if form_data.get('cp') == '0' %} selected {% endif %}> Asymptomatic </option>
+            <option value="1" {% if form_data.get('cp') == '1' %} selected {% endif %}> Atypical Angina </option>
+            <option value="2" {% if form_data.get('cp') == '2' %} selected {% endif %}> Non-anginal Angina </option>
+            <option value="3" {% if form_data.get('cp') == '3' %} selected {% endif %}> Typical Angina </option>
         </select>
         <br>
 
@@ -74,9 +74,9 @@
         <label for="ecg"> Resting ECG : </label>
         <select name="ecg" id="ecg" required>
             <option value="" disabled selected > Select </option>
-            <option value="0"> LVH </option>
-            <option value="1"> Normal </option>
-            <option value="2"> ST </option>
+            <option value="0" {% if form_data.get('ecg') == '0' %} selected {% endif %}> LVH </option>
+            <option value="1" {% if form_data.get('ecg') == '1' %} selected {% endif %}> Normal </option>
+            <option value="2" {% if form_data.get('ecg') == '2' %} selected {% endif %}> ST </option>
         </select>
         <br>
 
@@ -85,9 +85,9 @@
         <label for="st"> ST Slope : </label>
         <select name="st" id="st" required>
             <option value="" disabled selected > Select </option>
-            <option value="0"> Down </option>
-            <option value="1"> Flat </option>
-            <option value="2"> up </option>
+            <option value="0" {% if form_data.get('st') == '0' %} selected {% endif %}> Down </option>
+            <option value="1" {% if form_data.get('st') == '1' %} selected {% endif %}> Flat </option>
+            <option value="2" {% if form_data.get('st') == '1' %} selected {% endif %}> up </option>
         </select>
         <br>
 
