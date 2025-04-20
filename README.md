@@ -1,18 +1,19 @@
-Heart Disease Predition Model.
+Heart Disease Prediction Model.
 
-This project is a Heart Disease Predition Model built using the Logistic Regression model from the scikit-learn library. It predicts about a person having heart disease on the basis of the inputs like age, gender, bp, cholesterol etc. The model achieves an accuracy of 87%.
+This project is a Heart Disease Prediction Model built using the Logistic Regression model from the scikit-learn library. It predicts about a person having heart disease on the basis of the inputs like age, gender, bp, cholesterol etc. The model achieves an accuracy of 87% on training and test data.
 
-Features
+Features :
+
 Data Preprocessing:
 
-1. Some features like age, cholesterol and bp are converted to categorical values for better patter recognition.
-2. Scaling the features using StandaedScaler from Scikit-learn.
+1. Some features like age, cholesterol and bp are converted to categorical values for better pattern recognition.
+2. Scaling the features using StandardScaler from Scikit-learn.
 
 Model:
 The classification model is built using the Logistic Regression Model from Scikit-learn.
 
 Accuracy:
-The model has an accuracy of 87% on the test dataset.
+The model has an accuracy of 87% on the traning as well as test dataset.
 
 Deployment:
 The model is deployed using Flask, a web application framework, allowing for easy interaction and testing of the model via a user-friendly interface.
@@ -66,10 +67,11 @@ heart-disease-prediction/
 └── README.md               # This file
 
 
-Model Performance
-Accuracy: 87% on the test set.
-Precision and Recall: High scores for both classes, making the model reliable for spam detection in real-world applications.
-Contributing
+Model Performance :
+Accuracy: 87% on the traning and test set.
+Precision and Recall: High scores for both classes, making the model reliable for Heart Disease Prediction in real-world applications with human intervention.
+
+Contributing:
 Feel free to fork the repository and contribute to this project. If you encounter any issues or have suggestions for improvements, open an issue or submit a pull request.
 
 License

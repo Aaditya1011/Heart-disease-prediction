@@ -1,5 +1,3 @@
-
-
 def encodeChestPain(binIndex,length=4):
 
     chestArr = [0]*length
