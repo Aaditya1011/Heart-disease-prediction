@@ -24,20 +24,20 @@ Flask: For building web server.
 pandas: For handling the dataset.
 numpy: For numerical operations.
 
-1. You can install the required libraries by running:
+1. You can install the required libraries by running :
 
-pip install scikit-learn flask streamlit pandas numpy
+pip install scikit-learn flask pandas numpy
 
-2. Installation and Setup
+2. Installation and Setup :
 
 Clone the repository:
-git clone https://github.com/Aaditya1011/Email-spam-classifier.git
+git clone https://github.com/Aaditya1011/Heart-disease-prediction.git
 
 
-Install the dependencies:
+Install the dependencies :
 pip install -r requirements.txt
 
-In the terminal, Run the Flask app:
+In the terminal, Run the Flask app :
 flask run 
 
 This will launch a web interface in your default browser, where you can input data to Predict Heart Disease.
