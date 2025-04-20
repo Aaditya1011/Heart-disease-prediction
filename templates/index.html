@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1> <span> Heart Disease Prediction Using Machine Learning </span></h1>
+    <form action="/predict" id="predictform" method="post">
+        <!-- Age -->
+        Age : <input type="number" name="age" id ="age" required> <br>
+
+        <!-- Sex -->
+        <br>
+        <label for="sex"> Sex : </label>
+        <select name="sex" id="sex" required >
+            <option value="" disabled selected > Select </option>
+            <option value="1"> Male </option>
+            <option value="0"> Female </option>
+        </select>
+        <br>
+
+        <!-- Resting Blood Pressure -->
+        <br> Resting BP : <input type="number" name="bp" id ="bp" required> <br>
+
+        <!-- Cholesterol -->
+        <br> Cholesterol : <input type="number" name="chl" id ="chl" required> <br>
+
+        <!-- Fasting Blood Suger -->
+        <br>
+        <label for="fbs"> Fasting BS : </label>
+        <select name="fbs" id = "fbs" required >
+            <option value="" disabled selected > Select </option>
+            <option value="0"> <= 120 mg/dl </option>
+            <option value="1"> >120 mg/dl </option>
+        </select>
+        <br>
+
+        <!-- Max Heart Rate -->
+        <br> Max HR : <input type="number" name="hr" id ="hr" required> <br>
+
+        <!-- Oldpeak -->
+        <br> Oldpeak : <input type="number" name="op" id ="op" required> <br>
+
+        <!-- Exercise Angina -->
+        <br>
+        <label for="exang"> Exercise Angina : </label>
+        <select name="exang" id="exang" required >
+            <option value="" disabled selected > Select </option>
+            <option value="1"> Yes </option>
+            <option value="0"> No </option>
+        </select>
+        <br>
+
+        <!-- Chest Pain -->
+        <br>
+        <label for="cp"> Chest Pain Type : </label>
+        <select name="cp" id="cp" required >
+            <option value="" disabled selected > Select </option>
+            <option value="0"> Asymptomatic </option>
+            <option value="1"> Atypical Angina </option>
+            <option value="2"> Non-anginal Angina </option>
+            <option value="3"> Typical Angina </option>
+        </select>
+        <br>
+
+        <!-- Resting ECG  -->
+        <br>
+        <label for="ecg"> Resting ECG : </label>
+        <select name="ecg" id="ecg" required>
+            <option value="" disabled selected > Select </option>
+            <option value="0"> LVH </option>
+            <option value="1"> Normal </option>
+            <option value="2"> ST </option>
+        </select>
+        <br>
+
+        <!-- ST Slope  -->
+        <br>
+        <label for="st"> ST Slope : </label>
+        <select name="st" id="st" required>
+            <option value="" disabled selected > Select </option>
+            <option value="0"> Down </option>
+            <option value="1"> Flat </option>
+            <option value="2"> up </option>
+        </select>
+        <br>
+
+        <!-- Submit -->
+        <br> 
+        <button type="submit" > Predict </button>
+
+    </form>
+
+    {% if data == 1 %}
+    <p id="result" style="background-color:rgb(250, 21, 21)"> Prediction : Heart Disease Detected. </p>
+    {% else %}
+    <p id="result" style="background-color:rgb(9, 172, 9)"> Prediction : No Heart Disease Detected. </p>
+    {% endif %}
+
+</body>
+</html>
