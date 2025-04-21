@@ -43,6 +43,11 @@ h1 {
     font-family:sans-serif;
 }
 
+#enter{
+    font-family: Arial;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
 /* spam */
 span{
     display:inline-block;
