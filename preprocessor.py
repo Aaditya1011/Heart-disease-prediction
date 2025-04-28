@@ -81,9 +81,15 @@ def binBp(ecg):
 
 def encodeBp(binIndex,length=5):
 
-    ecgArr = [0]*length
-    ecgArr[binIndex] = 1
-    return ecgArr
+    bpArr = [0]*length
+    bpArr[binIndex] = 1
+    return bpArr
+
+def encodeRiskop(op):
+    if op > 2:
+        return 1
+    else:
+        return 0
 
 def preprocess(arr1,arr2):
 
@@ -104,7 +110,12 @@ def preprocess(arr1,arr2):
 
     bpEncoded = encodeBp(binBp(arr2[4]))
     arr1.extend(bpEncoded)
-    
+
+    arr1.append((arr1[5])**2)
+
+    riskop = encodeRiskop(arr1[5])
+    arr1.append(riskop)
+
     return arr1
 
 

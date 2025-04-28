@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,session
 import numpy as np
 import pickle 
 import preprocessor
@@ -6,8 +6,8 @@ import preprocessor
 app = Flask(__name__)
 
 # loading model and scaler.
-model = pickle.load(open('models/model.pkl','rb'))
-scaler = pickle.load(open('models/scaler.pkl','rb'))
+model = pickle.load(open('models/model2.pkl','rb'))
+scaler = pickle.load(open('models/scaler2.pkl','rb'))
 
 @app.route('/')
 def home():
@@ -44,6 +44,7 @@ def predict():
        '(57.4, 60.667]', '(60.667, 63.933]', '(63.933, 67.2]',
        '(67.2, 70.467]', '(70.467, 73.733]', '(73.733, 77.0]', 'n_Cholesterol',
        'low', 'normal', 'above normal', 'risk', 'high risk']
+       ['op*2','riskop']
     '''
 
     # preprocessing.
@@ -56,9 +57,15 @@ def predict():
     scaled_data = scaler.transform(dataArr)
 
     # prediction.
-    prediction = model.predict(scaled_data)
+    prediction = model.predict_proba(scaled_data)
 
-    return render_template('index.html',data=prediction[0])
+    # custom threshold.
+    if prediction[0][1] > 0.4:
+        data = 1
+    else:
+        data = 0
+
+    return render_template('index.html',data=data)
     
 
 if __name__ == "__main__":
