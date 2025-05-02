@@ -37,7 +37,7 @@
         <select name="fbs" id = "fbs" required >
             <option value="" disabled selected > Select </option>
             <option value="0" {% if form_data.get('fbs') == '0' %} selected {% endif %}> <= 120 mg/dl </option>
-            <option value="1" {% if form_data.get('fbs') == '1' %} selected {% endif %} >120 mg/dl </option>
+            <option value="1" {% if form_data.get('fbs') == '1' %} selected {% endif %} > > 120 mg/dl </option>
         </select>
         <br>
 
@@ -87,7 +87,7 @@
             <option value="" disabled selected > Select </option>
             <option value="0" {% if form_data.get('st') == '0' %} selected {% endif %}> Down </option>
             <option value="1" {% if form_data.get('st') == '1' %} selected {% endif %}> Flat </option>
-            <option value="2" {% if form_data.get('st') == '1' %} selected {% endif %}> up </option>
+            <option value="2" {% if form_data.get('st') == '2' %} selected {% endif %}> up </option>
         </select>
         <br>
 
