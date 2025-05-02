@@ -11,9 +11,6 @@ model = pickle.load(open('models/model2.pkl','rb'))
 scaler = pickle.load(open('models/scaler2.pkl','rb'))
 
 @app.route('/')
-def home():
-    return render_template('index.html')
-
 @app.route('/predict',methods=['GET','POST'])
 def predict():
 
